@@ -1,0 +1,103 @@
+Examples SQL Commands:
+
+UPDATE cars SET Color='Silver', LicenseNumber='HND 900' WHERE LicenseNumber='ABC 124';
+INSERT INTO "cars" VALUES("Honda", "Black", "BLK 000");
+
+create table tbl_books (Author text, Title text, ISBN text primary key, Publisher text);
+insert into tbl_books (Author, Title, ISBN, Publisher) values('John Smith', 'Life', '0-0-0-0-0-1', 'Bonnier');
+insert into tbl_books (Author, Title, ISBN, Publisher) values('James Woody', 'Love', '0-0-0-0-0-2', 'Bonnier');
+insert into tbl_books (Author, Title, ISBN, Publisher) values('Joan Carmen', 'Guns', '0-0-0-0-0-3', 'Bonnier');
+insert into tbl_books (Author, Title, ISBN, Publisher) values('Johnanna Boyd', 'Code', '0-0-0-0-0-4', 'Bonnier');
+insert into tbl_books (Author, Title, ISBN, Publisher) values('Eva Peron', 'Cars', '0-0-0-0-0-5', 'Books R us');
+
+-----
+
+Link:
+https://www.w3schools.com/sql/default.asp
+
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+
+CSS Background Shorthand:
+background: red url(img.jpg) no-repeat fixed left center
+
+Read More: 
+https://www.w3schools.com/cssref/css3_pr_background.asp
+
+CSS Fonts Shorthand:
+font: font-style font-variant font-weight font-size/line-height font-family
+
+Read More:
+https://www.w3schools.com/cssref/pr_font_font.asp
+
+CSS Transitions Shorthand:
+transition: property duration  timing-function delay;
+
+Read More:
+https://www.w3schools.com/Css/css3_transitions.asp
+
+CSS Animation Shorthand:
+animation: name duration timing delay iteration-count direction fill-mode play-state;
+
+Read More
+https://www.w3schools.com/cssref/css3_pr_animation.asp
+
+Keyframnes med start och stop:
+@keyframes name {
+  from {Vad som ska hända vid start av animationen}
+  to {Vad som ska hända vid slutet av animationen}
+}
+
+Keyframnes med start och stop och flera lägen:
+@keyframes name {
+  0% {
+    Vad som ska hända vid start av animationen
+  }
+  50% {Vad som ska hända vid 50%}
+  100% {Vad som ska hända vid slutet av animationen}
+}
+
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+
+php Connect to database:
+------------------------
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=test", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo 'Connected successfully<br/><hr/><br/>';
+}
+catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+  die();
+}
+$sql = 'SELECT fname, lname, phone FROM tbl1 ORDER BY lname'; ?>
+
+<table border="1">
+  <tr>
+    <th>Fname:</th>
+    <th>Lname:</th>
+    <th>Phone:</th>
+  </tr>
+
+<?php foreach ($conn->query($sql) as $row) : ?>
+  <tr>
+    <td><?= $row['fname']; ?></td>
+    <td><?= $row['lname']; ?></td>
+    <td><?= $row['phone']; ?></td>
+  </tr>
+<?php endforeach ?>
+
+</table>
+
+<!--
+ Connect to SQLite using PHP
+ https://www.a2hosting.com/kb/developer-corner/sqlite/connect-to-sqlite-using-php
+ PDO Link:
+ https://www.w3schools.com/php/php_mysql_connect.asp
+  
+-->

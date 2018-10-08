@@ -1,0 +1,50 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.menu{
+  display: none;
+}
+
+.menu li{
+  padding-top: 10px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.menu li:last-child{
+  padding-bottom: 10px;
+}
+
+.menu li a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label{
+  z-index: 10;
+  display: block;
+  text-align: center;
+  background-color: #008080;
+  color: #FFFFFF;
+  padding: 20px 0;
+  cursor: pointer;
+  width: 140px;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ ul{
+  display: block;
+  width: 140px;
+  list-style: none;
+  background-color: #000000;
+}
